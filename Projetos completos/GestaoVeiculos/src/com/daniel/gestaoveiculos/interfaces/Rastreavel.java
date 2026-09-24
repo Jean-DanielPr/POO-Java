@@ -1,4 +1,4 @@
-package com.daniel.gestaoveiculos;
+package com.daniel.gestaoveiculos.interfaces;
 
 public interface Rastreavel {
     public String obterLocalizacao();

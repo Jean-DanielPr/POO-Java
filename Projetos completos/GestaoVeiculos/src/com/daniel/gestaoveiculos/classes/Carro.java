@@ -1,4 +1,6 @@
-package com.daniel.gestaoveiculos;
+package com.daniel.gestaoveiculos.classes;
+
+import com.daniel.gestaoveiculos.classes.superclasse.Veiculo;
 
 public class Carro extends Veiculo {
     private int qtdPortas;

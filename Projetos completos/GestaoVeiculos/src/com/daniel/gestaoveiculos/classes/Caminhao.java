@@ -1,4 +1,7 @@
-package com.daniel.gestaoveiculos;
+package com.daniel.gestaoveiculos.classes;
+
+import com.daniel.gestaoveiculos.classes.superclasse.Veiculo;
+import com.daniel.gestaoveiculos.interfaces.Destino;
 
 public class Caminhao extends Veiculo implements Destino {
     private double carga;

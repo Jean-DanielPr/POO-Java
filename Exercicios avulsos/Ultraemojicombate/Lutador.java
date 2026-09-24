@@ -14,7 +14,7 @@ public class Lutador {
         this.nacionalidade = nacionalidade;
         this.idade = idade;
         this.altura = altura;
-        this.peso = peso;
+        this.setPeso(peso);
         this.vitorias = vitorias;
         this.derrotas = derrotas;
         this.empates = empates;
@@ -35,7 +35,11 @@ public class Lutador {
     }
 
     public void status() {
-
+        System.out.println(getNome() + " É um peso: " + getCategoria());
+        System.out.println("Ganhou "  + getVitorias() + " vezes.");
+        System.out.println("Perdeu "  + getDerrotas() + " vezes.");
+        System.out.println("Empatou "  + getEmpates() + " vezes.");
+        System.out.println("======================================");
     }
 
     public void ganharLuta() {

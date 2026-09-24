@@ -1,4 +1,8 @@
-package com.daniel.gestaoveiculos;
+package com.daniel.gestaoveiculos.classes;
+
+import com.daniel.gestaoveiculos.interfaces.Conectavel;
+import com.daniel.gestaoveiculos.interfaces.Eletrico;
+import com.daniel.gestaoveiculos.interfaces.Rastreavel;
 
 public class CarroEletrico extends Carro implements Eletrico, Conectavel, Rastreavel {
     private int nivelBateria;

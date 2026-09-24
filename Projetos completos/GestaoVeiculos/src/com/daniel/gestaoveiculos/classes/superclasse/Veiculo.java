@@ -1,4 +1,4 @@
-package com.daniel.gestaoveiculos;
+package com.daniel.gestaoveiculos.classes.superclasse;
 
 public abstract class Veiculo {
     private String marca;

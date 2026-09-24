@@ -1,4 +1,7 @@
 package com.daniel.gestaoveiculos;
+import com.daniel.gestaoveiculos.classes.*;
+import com.daniel.gestaoveiculos.classes.superclasse.Veiculo;
+
 import java.util.ArrayList;
 import java.util.List;
 
