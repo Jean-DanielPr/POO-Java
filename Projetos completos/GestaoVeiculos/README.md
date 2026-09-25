@@ -1,4 +1,3 @@
-```markdown
 # 🚗 Sistema de Gestão de Veículos (Java)
 
 Sistema desenvolvido em Java para gerenciar diferentes tipos de veículos, aplicando os pilares da **Orientação a Objetos (OO)**, boas práticas de programação, encapsulamento rigoroso e tratamento de exceções.
@@ -25,7 +24,7 @@ O projeto está organizado no pacote `com.daniel.gestaoveiculos`:
 ```text
 com.daniel.gestaoveiculos/
 │
-├── Main.java                # Classe principal com execuções e lógica de validação
+├── Main.java                # Classe principal com execuções e lógica de menu/validação
 ├── Veiculo.java             # Superclasse abstrata base
 ├── Moto.java                # Subclasse de Veículo
 ├── Carro.java               # Subclasse de Veículo
@@ -37,9 +36,6 @@ com.daniel.gestaoveiculos/
     ├── Conectavel.java      # Contrato para conexão à internet
     ├── Rastreavel.java      # Contrato para obtenção de localização
     └── Destino.java         # Contrato para regras de rota de carga
-
-```
-
 ---
 
 ## 🚀 Funcionalidades Principais
