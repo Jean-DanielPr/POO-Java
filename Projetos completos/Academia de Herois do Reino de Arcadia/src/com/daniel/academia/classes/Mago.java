@@ -13,6 +13,14 @@ public class Mago extends Heroi {
     }
 
     @Override
+    public String toString() {
+        return super.toString() + "Mago{" +
+                "poderMagico='" + poderMagico + '\'' +
+                ", inteligencia=" + inteligencia +
+                '}';
+    }
+
+    @Override
     public void listarHerois(){
 
     }

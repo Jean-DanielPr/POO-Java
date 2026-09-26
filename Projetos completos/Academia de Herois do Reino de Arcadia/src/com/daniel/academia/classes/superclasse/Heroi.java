@@ -5,10 +5,9 @@ public abstract class Heroi {
     private int nivel;
     private int vida;
     private int mana;
-    private static int qtdHerois;
-
+    private static int qtdHerois = 0;
+    private static final int limiteHerois = 20;
 // Método construtor
-
 
     public Heroi(String nome, int nivel, int vida, int mana) {
         this.nome = nome;
@@ -16,6 +15,9 @@ public abstract class Heroi {
         this.vida = vida;
         this.mana = mana;
         qtdHerois++;
+        if (qtdHerois > limiteHerois){
+            throw new IllegalStateException("Apenas 20 herois podem ser cadastrados.");
+        }
     }
 
     // Métodos específicos
@@ -25,14 +27,22 @@ public abstract class Heroi {
     public void listarHerois() {
 
     }
-    public void exibirEstatisticas() {
-        System.out.println("Nome: " + this.nome);
-        System.out.println("Nível: " + this.nivel);
-        System.out.println("Vida: " + this.vida);
-        System.out.println("Mana: " + this.mana);
+
+    public static void exibirNumHerois() {
+        System.out.println(qtdHerois + " Herois cadastrados.");
     }
 
-// Métodos especiais
+    @Override
+    public String toString() {
+        return "Heroi{" +
+                "nome='" + nome + '\'' +
+                ", nivel=" + nivel +
+                ", vida=" + vida +
+                ", mana=" + mana +
+                '}';
+    }
+
+    // Métodos especiais
     public String getNome() {
         return nome;
     }
