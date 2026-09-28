@@ -1,12 +1,14 @@
 package com.daniel.academia.classes.superclasse;
+import com.daniel.academia.interfaces.OperacoesHerois;
 
-public abstract class Heroi {
+public abstract class Heroi implements OperacoesHerois {
     private String nome;
     private int nivel;
     private int vida;
     private int mana;
     private static int qtdHerois = 0;
     private static final int limiteHerois = 20;
+
 // Método construtor
 
     public Heroi(String nome, int nivel, int vida, int mana) {
@@ -21,25 +23,21 @@ public abstract class Heroi {
     }
 
     // Métodos específicos
-    public void cadastrarHeroi() {
-
-    }
-    public void listarHerois() {
-
-    }
 
     public static void exibirNumHerois() {
         System.out.println(qtdHerois + " Herois cadastrados.");
     }
 
     @Override
-    public String toString() {
-        return "Heroi{" +
-                "nome='" + nome + '\'' +
-                ", nivel=" + nivel +
-                ", vida=" + vida +
-                ", mana=" + mana +
-                '}';
+    public void listarHerois() {
+        if (qtdHerois == 0) {
+            System.out.println("Não existe nenhum heroi cadastrado.");
+        } else {
+            System.out.println("Nome: " + this.nome);
+            System.out.println("Nivel: " + this.nivel);
+            System.out.println("Vda: " + this.vida);
+            System.out.println("Mana: " + this.mana);
+        }
     }
 
     // Métodos especiais

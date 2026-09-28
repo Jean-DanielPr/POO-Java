@@ -13,6 +13,14 @@ public class Arqueiro extends Heroi {
         this.concentracao = concentracao;
     }
 
+    @Override
+    public void listarHerois() {
+        System.out.println("------ARQUEIRO------");
+        super.listarHerois();
+        System.out.println("Precisao: " + this.precisao + "%");
+        System.out.println("Agilidade: " + this.agilidade);
+        System.out.println("Concentração: " + this.concentracao);
+    }
     public int getPrecisao() {
         return precisao;
     }

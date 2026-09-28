@@ -1,19 +1,48 @@
 package com.daniel.academia;
 
-import com.daniel.academia.classes.Mago;
-import com.daniel.academia.classes.superclasse.Heroi;
+import com.daniel.academia.classes.*;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        List<Heroi> herois = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        GerenciarHerois heroi = new GerenciarHerois();
+        int opcao;
 
-        for (int i = 0; i < 20; i++) {
-            herois.add(new Mago("Harry", 12,12,23,"Fire", 23));
+        do {
+            opcao = heroi.menu();
+            switch (opcao) {
+                case 1:
+                    heroi.cadastrarHeroi();
+                    UtilClasse.pausa();
+                    UtilClasse.limpaTela();
+                    break;
+                case 2:
+                    heroi.exibirHerois();
+                    UtilClasse.pausa();
+                    UtilClasse.limpaTela();
+                    break;
+                case 3:
+                    heroi.buscarHeroi();
+                    UtilClasse.pausa();
+                    UtilClasse.limpaTela();
+                    break;
+                case 4:
+                    heroi.caracteristicasGerais();
+                    UtilClasse.pausa();
+                    UtilClasse.limpaTela();
+                    break;
+                case 5:
+                    System.out.println("Saindo.");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+                    UtilClasse.pausa();
+                    break;
+            }
+        } while (opcao != 5);
 
-        }
-        Heroi.exibirNumHerois();
     }
+
 }
