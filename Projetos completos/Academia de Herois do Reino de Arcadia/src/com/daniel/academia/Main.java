@@ -1,6 +1,7 @@
 package com.daniel.academia;
 
-import com.daniel.academia.classes.*;
+import com.daniel.academia.classes.classeutil.UtilClasse;
+import com.daniel.academia.classes.gerenciadora.GerenciarHerois;
 
 import java.util.Scanner;
 
@@ -34,6 +35,7 @@ public class Main {
                     UtilClasse.limpaTela();
                     break;
                 case 5:
+                    heroi.exibirRelatorio();
                     System.out.println("Saindo.");
                     break;
                 default:

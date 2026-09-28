@@ -5,4 +5,5 @@ public interface Cadastro {
     public void exibirHerois();
     public void buscarHeroi();
     public void caracteristicasGerais();
+    public void exibirRelatorio();
 }

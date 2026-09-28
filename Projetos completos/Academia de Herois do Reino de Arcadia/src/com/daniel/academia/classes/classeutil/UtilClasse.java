@@ -1,4 +1,4 @@
-package com.daniel.academia.classes;
+package com.daniel.academia.classes.classeutil;
 
 import java.util.Scanner;
 
