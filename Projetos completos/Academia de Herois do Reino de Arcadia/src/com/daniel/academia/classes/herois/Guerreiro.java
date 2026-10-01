@@ -8,11 +8,13 @@ public class Guerreiro extends Heroi {
     private int forca;
     private static int qtdGuerreiro = 0;
 
+    /*Eu coloque os os setters dentro do metodo construtor para ele validar a regra que coloquei de não aceitar valores
+      maiores do que 100 */
     public Guerreiro(String nome, int nivel, int vida, int mana, int resistencia, int energia, int forca) {
         super(nome, nivel, vida, mana);
-        this.resistencia = resistencia;
-        this.energia = energia;
-        this.forca = forca;
+        setResistencia(resistencia);
+        setEnergia(energia);
+        setForca(forca);
         qtdGuerreiro++;
     }
 
@@ -33,7 +35,7 @@ public class Guerreiro extends Heroi {
     }
     public void setResistencia(int resistencia) {
         if (resistencia > 100) {
-            throw new IllegalArgumentException("O limite máximo é 100.");
+            throw new IllegalArgumentException("O limite máximo de resistência é 100.");
         } else {
             this.resistencia = resistencia;
         }    }
@@ -43,7 +45,7 @@ public class Guerreiro extends Heroi {
     }
     public void setEnergia(int energia) {
         if (energia > 100) {
-            throw new IllegalArgumentException("O limite máximo é 100.");
+            throw new IllegalArgumentException("O limite máximo de energia é 100.");
         } else {
             this.energia = energia;
         }
@@ -54,7 +56,7 @@ public class Guerreiro extends Heroi {
     }
     public void setForca(int forca) {
         if (forca > 100) {
-            throw new IllegalArgumentException("O limite máximo é 100.");
+            throw new IllegalArgumentException("O limite máximo de força é 100.");
         } else {
             this.forca = forca;
         }

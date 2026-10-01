@@ -17,12 +17,14 @@ public abstract class Heroi implements OperacoesHerois {
     * utilizando a palavra super e adicionando os atributos partculares de cada filha
     * Ele também conta o total de herois cadastrados atravez do atributo qtdHerois que é estático, também
     * fiz uma verificação dentro do metodo construtor lançando um IllegalStateException que indica que o limite foi atingido.
-    * NÃO FIZ O TRY CATCH DESSA EXEÇÃO ENTÃO O PROGRAMA SÓ VAI TERMINAR CASO O LIMITE SEJA EXCEDIDO.*/
+    * NÃO FIZ O TRY CATCH DESSA EXEÇÃO ENTÃO O PROGRAMA SÓ VAI TERMINAR CASO O LIMITE SEJA EXCEDIDO.
+    * Eu coloque os os setters dentro do metodo construtor para ele validar a regra que coloquei de não aceitar valores
+    * maiores do que 100 */
     public Heroi(String nome, int nivel, int vida, int mana) {
         this.nome = nome;
-        this.nivel = nivel;
-        this.vida = vida;
-        this.mana = mana;
+        setNivel(nivel);
+        setVida(vida);
+        setMana(mana);
         qtdHerois++;
         if (qtdHerois > limiteHerois){
             throw new IllegalStateException("Apenas 20 herois podem ser cadastrados.");
@@ -63,7 +65,7 @@ public abstract class Heroi implements OperacoesHerois {
     }
     public void setNivel(int nivel) {
         if (nivel > 100) {
-            throw new IllegalArgumentException("O limite máximo é 100.");
+            throw new IllegalArgumentException("O limite máximo de nível é 100.");
         } else {
             this.nivel = nivel;
         }
@@ -75,7 +77,7 @@ public abstract class Heroi implements OperacoesHerois {
     }
     public void setVida(int vida) {
         if (vida > 100) {
-            throw new IllegalArgumentException("O limite máximo é 100.");
+            throw new IllegalArgumentException("O limite máximo de vida é 100.");
         } else {
             this.vida = vida;
         }
@@ -86,7 +88,7 @@ public abstract class Heroi implements OperacoesHerois {
     }
     public void setMana(int mana) {
         if (mana > 100) {
-            throw new IllegalArgumentException("O limite máximo é 100.");
+            throw new IllegalArgumentException("O limite máximo de mana é 100.");
         } else {
             this.mana = mana;
         }

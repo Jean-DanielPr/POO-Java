@@ -7,10 +7,12 @@ public class Mago extends Heroi {
     private int inteligencia;
     private static int qtdMago = 0;
 
+    /*Eu coloque os os setters dentro do metodo construtor para ele validar a regra que coloquei de não aceitar valores
+      maiores do que 100 */
     public Mago(String nome, int nivel, int vida, int mana, String poderMagico, int inteligencia) {
         super(nome, nivel, vida, mana);
         this.poderMagico = poderMagico;
-        this.inteligencia = inteligencia;
+        setInteligencia(inteligencia);
         qtdMago++;
     }
 
@@ -35,7 +37,7 @@ public class Mago extends Heroi {
     }
     public void setInteligencia(int inteligencia) {
         if (inteligencia > 100) {
-            throw new IllegalArgumentException("O limite máximo é 100.");
+            throw new IllegalArgumentException("O limite máximo de inteligencia é 100.");
         } else {
             this.inteligencia = inteligencia;
         }

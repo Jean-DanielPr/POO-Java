@@ -7,22 +7,28 @@ public class Missao {
     private String nome;
     private String dificuldade;
     private double recompensaOuro;
-    private Heroi[] fazMissao;
-    private int contador = 0;
-    private static final int limite = 20;
+    private String fazMissao;
+    private static int contador = 0;
 
-    public Missao (String nome, String dificuldade, double recompensaOuro) {
+    public Missao (String nome, int dificuldade) {
         this.nome = nome;
-        this.dificuldade = dificuldade;
-        this.recompensaOuro = recompensaOuro;
+        setDificuldade(dificuldade);
     }
 
-    public void iniciarMissao() {
-
+    public void iniciarMissao(String nome) {
+        System.out.println("Heroi: " + nome);
+        this.fazMissao = nome;
+        System.out.println("Missão: " + getNome());
+        System.out.println("Dificuldade: " + getDificuldade());
+        System.out.println("Recompensa: " + getRecompensaOuro());
+        System.out.println("===========================");
+        concluirMissao();
     }
 
     public void concluirMissao() {
-
+        System.out.println("Missão concluida.");
+        System.out.println("Recompensa: " + getRecompensaOuro() + " moedas de ouro.");
+        contador++;
     }
 
     public String getNome() {
@@ -35,14 +41,36 @@ public class Missao {
     public String getDificuldade() {
         return dificuldade;
     }
-    public void setDificuldade(String dificuldade) {
-        this.dificuldade = dificuldade;
+    public void setDificuldade(int dificuldade) {
+        if (dificuldade == 1) {
+            this.dificuldade = "Fácil";
+            this.recompensaOuro = 100;
+        } else if (dificuldade == 2) {
+            this.dificuldade = "Médio";
+            this.recompensaOuro = 200;
+        } else if (dificuldade == 3) {
+            this.dificuldade = "Difícil";
+            this.recompensaOuro = 200;
+        } else {
+            throw new IllegalArgumentException("Dificuldade de missão inválida");
+        }
     }
 
     public double getRecompensaOuro() {
         return recompensaOuro;
     }
-    public void setRecompensaOuro(double recompensaOuro) {
-        this.recompensaOuro = recompensaOuro;
+
+    public String getFazMissao() {
+        return fazMissao;
+    }
+    public void setFazMissao(String fazMissao) {
+        this.fazMissao = fazMissao;
+    }
+
+    public static int getContador() {
+        return contador;
+    }
+    public static void setContador(int contador) {
+        Missao.contador = contador;
     }
 }

@@ -35,15 +35,20 @@ public class Main {
                     UtilClasse.limpaTela();
                     break;
                 case 5:
+                    heroi.menuMissao();
+                    UtilClasse.pausa();
+                    UtilClasse.limpaTela();
+                    break;
+                case 6:
                     heroi.exibirRelatorio();
-                    System.out.println("Saindo.");
+                    System.out.println("Saindo...");
                     break;
                 default:
                     System.out.println("Opção inválida.");
                     UtilClasse.pausa();
                     break;
             }
-        } while (opcao != 5);
+        } while (opcao != 6);
 
     }
 

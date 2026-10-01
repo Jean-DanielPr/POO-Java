@@ -7,11 +7,13 @@ public class Arqueiro extends Heroi {
     private int concentracao;
     private static int qtdArqueiros = 0;
 
+    /*Eu coloque os os setters dentro do metodo construtor para ele validar a regra que coloquei de não aceitar valores
+      maiores do que 100 */
     public Arqueiro(String nome, int nivel, int vida, int mana, int precisao, int agilidade, int concentracao) {
         super(nome, nivel, vida, mana);
-        this.precisao = precisao;
-        this.agilidade = agilidade;
-        this.concentracao = concentracao;
+        setPrecisao(precisao);
+        setAgilidade(agilidade);
+        setConcentracao(concentracao);
         qtdArqueiros++;
     }
     /** Metodo listarHerois sobrescrito da classe Heroi utilizando a palavra super e adicionando
@@ -29,7 +31,7 @@ public class Arqueiro extends Heroi {
     }
     public void setPrecisao(int precisao) {
         if (precisao > 100) {
-            throw new IllegalArgumentException("O limite máximo é 100.");
+            throw new IllegalArgumentException("O limite máximo de precisão é 100%.");
         } else {
             this.precisao = precisao;
         }
@@ -40,7 +42,7 @@ public class Arqueiro extends Heroi {
     }
     public void setAgilidade(int agilidade) {
         if (agilidade > 100) {
-            throw new IllegalArgumentException("O limite máximo é 100.");
+            throw new IllegalArgumentException("O limite máximo de agilidade é 100.");
         } else {
             this.agilidade = agilidade;
         }
@@ -51,7 +53,7 @@ public class Arqueiro extends Heroi {
     }
     public void setConcentracao(int concentracao) {
         if (concentracao > 100) {
-            throw new IllegalArgumentException("O limite máximo é 100.");
+            throw new IllegalArgumentException("O limite máximo de concentração é 100.");
         } else {
             this.concentracao = concentracao;
         }
