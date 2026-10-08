@@ -1,5 +1,7 @@
 package br.com.daniel.maraonajava.excecoes;
 
+// O bloco finally é executado toda vez que eu tenho um catch, independente se ele capturou uma exceção ou não
+
 public class TryFinally {
     public static void main(String[] args) {
         try {
