@@ -12,6 +12,10 @@ public class TesteWrapper02 {
         Double doubleW = doubleP;
         Boolean booleanW = booleanP;
         Character charW = charP;
+        // também poderia fazer o autoboxing assim > Integer intW = 2;
+
+        //unboxing
+        int i = intW;
 
         System.out.println("Integer: "+intW);
         System.out.println("Double: "+doubleW);
