@@ -5,10 +5,13 @@ public class StringTest01 {
         /* As strings nome e nome2 estão apontando para o mesmo objeto na pool de string
         então se eu comparar elas com == vai dar true. Por que o java economiza espaço de
         memoria e deixa o nome "Jean" apenas uma vez na pool de Strings e aponta qualquer
-        string com o mesmo nome pra lá */
+        string com o mesmo nome pra lá
+        Strings são imutáveis.*/
         String nome = "Jean";
         String nome2 = "Jean";
         System.out.println("Na pool de string usando o ==: "+(nome == nome2));
+        nome2 += " Daniel";
+        System.out.println(nome2);
 
         /* Abaixo eu instanciei um objeto String que tem o nome Jean. Se eu comparar com
         as strings de cima ele vai dar false porque quando eu instancio um objeto String
