@@ -11,9 +11,6 @@ public class ListaDeCompras extends JFrame {
 
     private JTextArea txtList;
 
-    private String desconto[] = {"5%", "10%", "15%"};
-    private JComboBox chkServico;
-
     private JLabel lblListaDeCompras;
     private JLabel lblPula;
     private JLabel lblPorPessoa;
@@ -28,7 +25,7 @@ public class ListaDeCompras extends JFrame {
     public ListaDeCompras() {
 
         setTitle("Conta do Restaurante");
-        setSize(420, 300);
+        setSize(450, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -92,6 +89,13 @@ public class ListaDeCompras extends JFrame {
             i++;
 
             String produto = (txtProduto.getText().trim());
+            if (produto.isBlank() | produto.equals(null)) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "O nome do produto precisa ser informado."
+                );
+                return;
+            }
 
             int quantidade =
                     Integer.parseInt(txtQuantidade.getText());
