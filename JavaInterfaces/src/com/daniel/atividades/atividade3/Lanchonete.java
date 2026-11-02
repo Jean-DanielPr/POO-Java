@@ -24,7 +24,7 @@ public class Lanchonete extends JFrame {
 
     private double totalPedido = 0;
 
-    cmbProdutos
+    //cmbProdutos
 
     public Lanchonete() {
 
