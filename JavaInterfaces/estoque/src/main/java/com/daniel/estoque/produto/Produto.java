@@ -32,7 +32,7 @@ public class Produto {
     }
     public void setNome(String nome) {
         if (nome == null || nome.isBlank()) {
-            throw new NomeInvalidoException("O nome deve ser informado.");
+            throw new NomeInvalidoException("Por favor, informe o nome do produto.");
         }
         if (nome.trim().length() < 3) {
             throw new NomeInvalidoException("O nome deve ter pelo menos 3 caracteres.");
