@@ -3,6 +3,7 @@ package com.daniel.estoque.tela;
 import com.daniel.estoque.excecoes.NegocioException;
 import com.daniel.estoque.gerenciamento.Gerenciadora;
 
+import javax.sql.RowSetListener;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -37,6 +38,7 @@ public class TelaPrincipal extends JFrame{
 
         JPanel painelCampos = new JPanel();
         painelCampos.setLayout(new GridLayout(4,2,5,5));
+        painelCampos.setBorder(BorderFactory.createEmptyBorder(10,20, 0, 20));
 
         JLabel lblNomeProduto = new JLabel("Nome do produto:");
         txtNomeProduto = new JTextField();
@@ -51,23 +53,34 @@ public class TelaPrincipal extends JFrame{
         chkCategoria = new JComboBox<>(nomesCategorias);
 
         JPanel painelBotoes = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        painelBotoes.setBorder(BorderFactory.createEmptyBorder(10, 20, 0, 20));
 
-        btnCadastrar = new JButton("Cadastrar");
-        btnCadastrar.setBackground(new Color(46, 204, 113));
+        Font fonteBotoes = new Font("SansSerif", Font.BOLD, 14);
 
         btnLimpar = new JButton("Limpar");
         btnLimpar.setBackground(new Color(218, 218, 218));
+        btnLimpar.setFont(fonteBotoes);
+
+        btnCadastrar = new JButton("Cadastrar");
+        btnCadastrar.setBackground(new Color(218, 218, 218));
+        btnCadastrar.setFont(fonteBotoes);
+
+        JPanel painelRodape = new JPanel(new FlowLayout(FlowLayout.CENTER));
 
         btnRemoverSelecionado = new JButton("Remover selecionado");
         btnRemoverSelecionado.setBackground(new Color(248, 81, 81));
+        btnRemoverSelecionado.setFont(fonteBotoes);
 
         JPanel topo = new JPanel(new BorderLayout());
         topo.add(painelCampos, BorderLayout.CENTER);
         topo.add(painelBotoes, BorderLayout.SOUTH);
 
+        setLayout(new BorderLayout());
         add(topo, BorderLayout.NORTH);
         add(new JScrollPane(tbLista), BorderLayout.CENTER);
+        add(painelRodape, BorderLayout.SOUTH);
 
+        tbLista.setDefaultEditor(Object.class, null);
 
         painelCampos.add(lblNomeProduto);
         painelCampos.add(txtNomeProduto);
@@ -81,9 +94,10 @@ public class TelaPrincipal extends JFrame{
         painelCampos.add(lblCategoria);
         painelCampos.add(chkCategoria);
 
-        painelBotoes.add(btnCadastrar);
         painelBotoes.add(btnLimpar);
-        painelBotoes.add(btnRemoverSelecionado);
+        painelBotoes.add(btnCadastrar);
+
+        painelRodape.add(btnRemoverSelecionado);
 
         btnCadastrar.addActionListener(e -> cadastrar());
         btnLimpar.addActionListener(e -> limpar());
@@ -92,7 +106,7 @@ public class TelaPrincipal extends JFrame{
         setVisible(true);
     }
     public void cadastrar() {
-        String nome = (txtNomeProduto.getText().trim());
+        String nome = (txtNomeProduto.getText().trim().replaceAll("[,.!]", ""));
 
         double valor;
         int quantidade;
