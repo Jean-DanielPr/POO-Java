@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="estoque:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/estoque_jar</output-path>
+    <root id="archive" name="estoque.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="estoque" />
+    </root>
+  </artifact>
+</component>

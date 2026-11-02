@@ -1,9 +1,9 @@
 package com.daniel.estoque.tela;
 
 import com.daniel.estoque.excecoes.NegocioException;
+import com.daniel.estoque.excecoes.PrecoInvalidoException;
 import com.daniel.estoque.gerenciamento.Gerenciadora;
 
-import javax.sql.RowSetListener;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -105,6 +105,7 @@ public class TelaPrincipal extends JFrame{
 
         setVisible(true);
     }
+
     public void cadastrar() {
         String nome = (txtNomeProduto.getText().trim().replaceAll("[,.!]", ""));
 
@@ -114,9 +115,16 @@ public class TelaPrincipal extends JFrame{
         try {
             valor = Double.parseDouble(txtPreco.getText().trim());
         } catch (NumberFormatException e) {
+            if (txtPreco.getText() == null || txtPreco.getText().isBlank()) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "Por favor, informe o valor do produto."
+                );
+                return;
+            }
             JOptionPane.showMessageDialog(
                     this,
-                    "ERRO: Digite apenas números no campo PREÇO."
+                    "ERRO: Digite apenas números no campo VALOR."
             );
             return;
         }
@@ -124,6 +132,13 @@ public class TelaPrincipal extends JFrame{
         try {
             quantidade = Integer.parseInt(txtQtdEstoque.getText().trim());
         } catch (NumberFormatException e) {
+            if (txtQtdEstoque.getText() == null || txtQtdEstoque.getText().isBlank()) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "Por favor, informe a quantidade do produto."
+                );
+                return;
+            }
             JOptionPane.showMessageDialog(
                     this,
                     "ERRO: Digite apenas números no campo QUANTIDADE."
@@ -189,11 +204,4 @@ public class TelaPrincipal extends JFrame{
 
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() ->
-                new TelaPrincipal()
-        );
-    }
-
 }
-
