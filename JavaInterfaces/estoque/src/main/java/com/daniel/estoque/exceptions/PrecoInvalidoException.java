@@ -1,4 +1,4 @@
-package com.daniel.estoque.excecoes;
+package com.daniel.estoque.exceptions;
 
 public class PrecoInvalidoException extends NegocioException {
     public PrecoInvalidoException() {

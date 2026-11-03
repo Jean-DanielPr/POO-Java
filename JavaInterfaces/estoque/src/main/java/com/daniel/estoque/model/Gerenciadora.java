@@ -1,7 +1,6 @@
-package com.daniel.estoque.gerenciamento;
+package com.daniel.estoque.model;
 
-import com.daniel.estoque.excecoes.NomeDuplicadoException;
-import com.daniel.estoque.produto.Produto;
+import com.daniel.estoque.exceptions.NomeDuplicadoException;
 
 
 import java.util.ArrayList;

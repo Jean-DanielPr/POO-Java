@@ -1,8 +1,8 @@
-package com.daniel.estoque.produto;
+package com.daniel.estoque.model;
 
-import com.daniel.estoque.excecoes.EstoqueInvalidoException;
-import com.daniel.estoque.excecoes.NomeInvalidoException;
-import com.daniel.estoque.excecoes.PrecoInvalidoException;
+import com.daniel.estoque.exceptions.EstoqueInvalidoException;
+import com.daniel.estoque.exceptions.NomeInvalidoException;
+import com.daniel.estoque.exceptions.PrecoInvalidoException;
 
 public class Produto {
     private String nome;

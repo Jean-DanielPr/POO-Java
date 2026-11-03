@@ -1,8 +1,7 @@
-package com.daniel.estoque.tela;
+package com.daniel.estoque.view;
 
-import com.daniel.estoque.excecoes.NegocioException;
-import com.daniel.estoque.excecoes.PrecoInvalidoException;
-import com.daniel.estoque.gerenciamento.Gerenciadora;
+import com.daniel.estoque.exceptions.NegocioException;
+import com.daniel.estoque.model.Gerenciadora;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -21,6 +20,8 @@ public class TelaPrincipal extends JFrame{
     private JButton btnRemoverSelecionado;
     private JButton btnLimpar;
 
+    private int contador = 0001;
+
     private DefaultTableModel model = new DefaultTableModel(
         new String[]{"Nome", "Preço", "Quantidade", "Categoria"}, 0
     );
@@ -28,7 +29,6 @@ public class TelaPrincipal extends JFrame{
     JTable tbLista = new JTable(model);
 
     Gerenciadora gerencia = new Gerenciadora();
-
 
     public TelaPrincipal() {
         setTitle("Estoque");
@@ -164,6 +164,9 @@ public class TelaPrincipal extends JFrame{
                     JOptionPane.ERROR_MESSAGE
             );
         }
+
+        int linha = tbLista.getSelectedRow();
+
         model.addRow(new Object[]{nome, valor, quantidade, categoria});
 
     }
@@ -191,7 +194,7 @@ public class TelaPrincipal extends JFrame{
 
         int linhaModel = tbLista.convertRowIndexToModel(linha);
 
-        String nomeProduto = model.getValueAt(linhaModel, 0).toString();
+        String nomeProduto = model.getValueAt(linhaModel, 1).toString();
 
         model.removeRow(linhaModel);
 
